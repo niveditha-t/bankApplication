@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "81b1e67c-5429-488d-a359-a1834845f960",
+		"name": "Cybrilla-Employee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddAccount",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"accountType\": \"CURRENT\", \"customerNumber\": \"CUST001\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"account"
+					]
+				},
+				"description": "Add new account"
+			},
+			"response": []
+		},
+		{
+			"name": "ActivateAccount",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/account/SAV010/activate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"account",
+						"SAV010",
+						"activate"
+					]
+				},
+				"description": "Activate account"
+			},
+			"response": []
+		},
+		{
+			"name": "DeactivateAccount",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/account/SAV010/deactivate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"account",
+						"SAV010",
+						"deactivate"
+					]
+				},
+				"description": "Deactivate Account"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "cybrilla",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "cybrilla",
+				"type": "string"
+			}
+		]
+	}
+}

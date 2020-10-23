@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "54e5f10c-43e8-4491-8ca0-f791963e9352",
+		"name": "Cybrilla-Customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AccountDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/account/SAV001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"account",
+						"SAV001"
+					]
+				},
+				"description": "Fetch Account Details"
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "1000"
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/account/SAV001/deposit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"account",
+						"SAV001",
+						"deposit"
+					]
+				},
+				"description": "Deposit amount to account"
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "100"
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/account/SAV001/withdraw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"account",
+						"SAV001",
+						"withdraw"
+					]
+				},
+				"description": "Withdraw amount from account"
+			},
+			"response": []
+		},
+		{
+			"name": "AllAccounts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"accounts"
+					]
+				},
+				"description": "Fetch account summary of accounts"
+			},
+			"response": []
+		},
+		{
+			"name": "CustomerDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"details"
+					]
+				},
+				"description": "Fetch details of customer"
+			},
+			"response": []
+		},
+		{
+			"name": "AllPayees",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/payees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"payees"
+					]
+				},
+				"description": "Fetch all registered payees"
+			},
+			"response": []
+		},
+		{
+			"name": "AllTransactions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/transactions/SAV001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"transactions",
+						"SAV001"
+					]
+				},
+				"description": "Fetch transaction log of given account"
+			},
+			"response": []
+		},
+		{
+			"name": "AddPayee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payeeAccountNumber\": \"SAV001\",\n    \"payeeName\": \"NiveSav\",\n    \"payeeType\": \"INTERNAL\",\n    \"transferLimit\": 10000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/payee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"payee"
+					]
+				},
+				"description": "Add payee to customer"
+			},
+			"response": []
+		},
+		{
+			"name": "PayeeDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/payee/PYE00001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"payee",
+						"PYE00001"
+					]
+				},
+				"description": "Fetch details of Payee"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateLimit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "50000"
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/payee/PYE00001/updateLimit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"payee",
+						"PYE00001",
+						"updateLimit"
+					]
+				},
+				"description": "Update transfer limit to payee"
+			},
+			"response": []
+		},
+		{
+			"name": "TransferFunds",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"payeeNumber\": \"PYE0002\",  \"transferAmount\": 0}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/account/ACC00001/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"account",
+						"ACC00001",
+						"transfer"
+					]
+				},
+				"description": "transfer funds"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "niveditha",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "niveditha",
+				"type": "string"
+			}
+		]
+	}
+}
